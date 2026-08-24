@@ -2,30 +2,41 @@
 
 A public, searchable transparency project for browsing South African Spaza Shop Support Fund approvals.
 
-## Purpose
+## What is in the Atlas
 
-The Atlas converts the published Annexure A approvals list into structured, searchable data so members of the public can browse beneficiaries by province, district, municipality, approval date and support amount.
+The site converts the published 34-page Annexure A approvals list into a searchable register. The current extraction contains **1,383 approval records** with a combined published package value of **R83,766,000**.
 
-The project also provides an evidence layer for beneficiary research. Research findings should clearly distinguish verified facts, partial matches, unresolved identities and data inconsistencies. Absence of an online footprint is not evidence of wrongdoing.
+Visitors can search and filter by beneficiary, province, district and municipality; sort approvals; open beneficiary profiles; and download the currently filtered results as CSV.
 
-## Dataset
+Core fields are beneficiary/spaza-shop name, approval date, province, district, municipality, approved package amount, source page and research status.
 
-The current extracted dataset contains 1,383 approval records with a combined published package value of R83,766,000.
+## Evidence standard
 
-Core fields include:
-- Beneficiary / spaza shop name
-- Approval date
-- Province
-- District
-- Municipality
-- Approved package amount
-- Source page
-- Research status
+The Annexure is the primary source for approval information. Independent company, director, address, contract and web research is stored separately and linked to supporting evidence.
 
-## Methodology
+Being listed in the Atlas is **not an allegation of wrongdoing**. “Unresearched” means no independent public-record review has yet been completed. A missing online footprint is not adverse evidence, and similar company names are not treated as identity matches without sufficient corroboration.
 
-The government approvals document is treated as the primary source for approval information. Independent company, director, address, contract and web research is attached separately and should include evidence links. Similar company names must not be treated as identity matches without sufficient evidence.
+## Initial researched profiles
+
+The first research layer includes MAHLASELA FRUIT AND VEG MARKET, NTOMBILELE LEGACY and PRELIM LOGISTIX. Each profile separates the source record from independent public evidence and states any identity limitation explicitly.
+
+## Deployment
+
+A GitHub Pages workflow is included at `.github/workflows/pages.yml`. Once GitHub Pages is configured to use **GitHub Actions** as its publishing source, pushes to `main` deploy automatically.
+
+Expected project-site URL after Pages is enabled:
+
+`https://mahlatse32.github.io/spaza-fund-atlas/`
+
+## Repository structure
+
+- `index.html` — public interface
+- `styles.css` — responsive presentation
+- `app.js` — search, filters, profiles, pagination and CSV export
+- `packed-*.js` — compressed source dataset split into safe static chunks
+- `research.js` — sourced independent research profiles
+- `.github/workflows/pages.yml` — automatic GitHub Pages deployment
 
 ## Status
 
-Initial public version. The research layer will expand progressively across all beneficiaries.
+Public v1 code and the complete extracted dataset are committed. The research layer can now expand progressively across all beneficiaries.
