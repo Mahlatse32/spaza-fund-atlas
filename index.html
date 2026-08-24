@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Spaza Fund Atlas</title><meta name="description" content="Search and browse beneficiaries listed in Annexure A approvals.">
+<link rel="stylesheet" href="styles.css"></head><body>
+<header><div class="wrap hero"><div><div class="eyebrow">PUBLIC INTEREST DATASET</div><h1>Spaza Fund Atlas</h1><p>Browse, search and scrutinise the approvals published in Annexure A. Source records and independent research are kept clearly separate.</p></div><div class="source-note">Source: Annexure A Approvals List<br><span>34-page PDF supplied for this project</span></div></div></header>
+<main class="wrap">
+<section class="stats" id="stats"></section>
+<section class="notice"><strong>Evidence standard:</strong> Being listed here is not an allegation of wrongdoing. “Unresearched” means we have not yet checked public records. Public matches are labelled by strength and include source links.</section>
+<section class="controls"><input id="q" type="search" placeholder="Search company, municipality, district…"><select id="province"><option value="">All provinces</option></select><select id="status"><option value="">All research statuses</option><option>Researched</option><option>Source only</option></select><select id="sort"><option value="id">Original order</option><option value="amount-desc">Amount: high to low</option><option value="date-desc">Approval: newest</option><option value="name">Name: A–Z</option></select></section>
+<div class="resultbar"><span id="resultCount"></span><button id="downloadBtn">Download filtered CSV</button></div>
+<div class="tablewrap"><table><thead><tr><th>#</th><th>Beneficiary</th><th>Approval</th><th>Province</th><th>District</th><th>Municipality</th><th>Package</th><th>Evidence</th></tr></thead><tbody id="tbody"></tbody></table></div>
+<div class="pager"><button id="prev">← Previous</button><span id="pageLabel"></span><button id="next">Next →</button></div>
+</main>
+<div id="modal" class="modal" aria-hidden="true"><div class="modal-card"><button class="close" id="close">×</button><div id="modalBody"></div></div></div>
+<footer><div class="wrap">Built from the published Annexure A schedule. Research notes should be independently verified before publication of any allegation.</div></footer>
+<script src="data.js"></script><script src="app.js"></script></body></html>
